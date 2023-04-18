@@ -1,0 +1,11 @@
+Model Information:
+* title:	BB8 Droid
+* source:	https://sketchfab.com/3d-models/bb8-droid-8d4f7dbd7dbd476c81e2a4c9bf0664f8
+* author:	OGL (https://sketchfab.com/GaryLim)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "BB8 Droid" (https://sketchfab.com/3d-models/bb8-droid-8d4f7dbd7dbd476c81e2a4c9bf0664f8) by OGL (https://sketchfab.com/GaryLim) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
