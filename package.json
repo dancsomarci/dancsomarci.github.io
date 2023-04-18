@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "@mediapipe/tasks-vision": "^0.1.0-alpha-10",
-    "three": "^0.151.0"
-  },
-  "devDependencies": {
-    "vite": "^4.2.1"
-  }
-}
