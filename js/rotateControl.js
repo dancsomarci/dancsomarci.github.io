@@ -1,3 +1,5 @@
+"use strict";
+
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
@@ -213,7 +215,7 @@ function generateOnResultCallback(camera, model) {
       // This demo is for one hand gestures
       const landmarks = results.multiHandLandmarks[0];
 
-      drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,{color: '#00FF00', lineWidth: 3});
+      drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,{color: '#00FF00', lineWidth: 2});
       // //drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 0.01});
 
       canvasCtx.restore()
@@ -480,25 +482,23 @@ function initMediapipeHandsAsync(camera3D, model) {
         height: 720,
       });
 
-      window.addEventListener("unload", function () {
-        const video = document.getElementById("webcam");
-        const stream = video.srcObject;
-        if (!stream) {
-          return;
-        }
-        const tracks = stream.getTracks();
-        tracks.forEach(function (track) {
-          track.stop();
-        });
-
-        camera.stop();
-      });
-
       const cameraStarted = camera.start();
 
       const videoStreamStarted = new Promise((resolve) =>
         videoElement.addEventListener("playing", resolve)
       );
+
+      window.addEventListener("beforeunload", function () {
+        camera.stop();
+
+        const stream = videoElement.srcObject;
+        if (stream) {
+          const tracks = stream.getTracks();
+          tracks.forEach(function (track) {
+            track.stop();
+          });
+        }
+      });
 
       Promise.all([cameraStarted, videoStreamStarted]).then(() => {
         console.log("hands loaded");
